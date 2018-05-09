@@ -23,6 +23,7 @@ image::https://raw.githubusercontent.com/apache/tinkerpop/master/docs/static/ima
 [[release-3-2-9]]
 === TinkerPop 3.2.9 (Release Date: May 8, 2018)
 
+* Fixed a bug in `TinkerGraphCountStrategy`, which didn't consider that certain map steps may not emit an element.
 * Fixed bug where path history was not being preserved for keys in mutations.
 * Bumped to httpclient 4.5.5.
 * Bumped to Groovy 2.4.15 - fixes bug with `Lambda` construction.
