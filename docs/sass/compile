@@ -23,8 +23,7 @@ DIR=`dirname $0`
 
 IF="${DIR}/tabs.scss"
 OF="${DIR}/../stylesheets/tabs.css"
-TF=`mktemp`
 
 scss --sourcemap=none -t compressed -C ${IF} ${OF}
-
-cat ${DIR}/../stylesheets/tinkerpop.css | awk 'BEGIN {p=1} {if (p) print} /\*\// {p=0}' | cat - ${OF} > ${TF} && mv ${TF} ${OF}
+cat ${DIR}/../stylesheets/tinkerpop-base.css ${OF} > ${DIR}/../stylesheets/tinkerpop.css
+rm ${OF}
